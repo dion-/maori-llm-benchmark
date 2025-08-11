@@ -3,7 +3,7 @@
     "id": "vocab_kupu_001",
     "task": "vocabulary",
     "prompt": "Translate the English word 'family' into te reo Māori. Answer with a single word.",
-    "expected": ["whānau"],
+    "expected": ["whānau", "whanau"],
     "eval": {
       "type": "exact",
       "normalize": { "macrons": true, "case": "insensitive" }
@@ -146,7 +146,20 @@
     "id": "aspect_present_continuous_001",
     "task": "grammar",
     "prompt": "Translate to Māori: 'I am reading right now.' Provide either of the common patterns.",
-    "expected": ["Kei te pānui", "E pānui ana", "Kei te panui", "E panui ana"],
+    "expected": [
+      "Kei te pānui",
+      "E pānui ana",
+      "Kei te panui",
+      "E panui ana",
+      "Kei te pānui au",
+      "E pānui ana au",
+      "Kei te pānui ahau",
+      "E pānui ana ahau",
+      "Kei te panui au",
+      "E panui ana au",
+      "Kei te panui ahau",
+      "E panui ana ahau"
+    ],
     "eval": { "type": "llm-judge" },
     "metadata": { "topic": "aspect", "level": "A2" }
   },
@@ -203,5 +216,115 @@
     "expected": ["Nā Hine i waiata", "Nā Hine i te waiata"],
     "eval": { "type": "llm-judge" },
     "metadata": { "topic": "focus/emphasis", "level": "B2" }
+  },
+  {
+    "id": "syntax_cleft_location_001",
+    "task": "syntax",
+    "prompt": "Translate to Māori using a cleft sentence emphasising the location: 'It was on the hill that they built the pā.'",
+    "expected": [
+      "Ko runga i te puke i hanga ai rātou i te pā",
+      "Ko runga i te puke i hangaia ai rātou i te pā"
+    ],
+    "eval": { "type": "llm-judge" },
+    "metadata": { "topic": "cleft-sentences", "level": "C1" }
+  },
+  {
+    "id": "morphology_causative_haere_001",
+    "task": "morphology",
+    "prompt": "Form the causative version of the verb 'haere' (to go). Answer with a single word.",
+    "expected": ["whakahaere"],
+    "eval": {
+      "type": "exact",
+      "normalize": { "macrons": true, "case": "insensitive" }
+    },
+    "metadata": { "topic": "causative", "level": "C1" }
+  },
+  {
+    "id": "translation_oratory_steadfast_001",
+    "task": "translation",
+    "prompt": "Translate to Māori: 'Should the winds of adversity blow, let our hearts remain steadfast.'",
+    "expected": [
+      "Mehemea ka pūhia ngā hau o te raruraru, kia ū tō tātou ngākau",
+      "Mēnā e pupū ana ngā hau kino, kia ū tonu ō tātou ngākau"
+    ],
+    "eval": { "type": "llm-judge" },
+    "metadata": { "domain": "oratory", "level": "C2" }
+  },
+  {
+    "id": "comprehension_reason_agreement_001",
+    "task": "comprehension",
+    "prompt": "Pānuihia tēnei: 'Ka mutu ana te hui, ka tū a Mere ki te kōrero. Ahakoa ngā take uaua, i ū ia ki te kaupapa. Nā whai anō i whakaae te katoa.' Pātai: He aha te take i whakaae ai te katoa?",
+    "expected": [
+      "Nā te mea i ū a Mere ki te kaupapa",
+      "Because Mere stuck to the topic"
+    ],
+    "eval": { "type": "llm-judge" },
+    "metadata": { "domain": "discourse", "level": "C1" }
+  },
+  {
+    "id": "idiom_flounder_001",
+    "task": "idiom",
+    "prompt": "Interpret the meaning of the proverb: 'E kore te pātiki e hoki ki tōna puehu.'",
+    "expected": [
+      "Once you leave, you will not return to where you started",
+      "A person rarely returns after leaving their home or origin"
+    ],
+    "eval": { "type": "llm-judge" },
+    "metadata": { "topic": "whakataukī", "level": "C2" }
+  },
+  {
+    "id": "syntax_topicalization_fronting_001",
+    "task": "syntax",
+    "prompt": "Translate to Māori using topicalization to front the object: 'The book, the child read it yesterday.'",
+    "expected": [
+      "Ko te pukapuka i pānui te tamaiti inanahi",
+      "Ko te pukapuka i pānuihia e te tamaiti inanahi"
+    ],
+    "eval": { "type": "llm-judge" },
+    "metadata": { "topic": "topicalization", "level": "C2" }
+  },
+  {
+    "id": "grammar_ao_possession_reflexive_001",
+    "task": "grammar",
+    "prompt": "Translate to Māori emphasising ownership: 'His own thoughts.' Answer with the phrase only.",
+    "expected": ["ōna ake whakaaro", "ona ake whakaaro"],
+    "eval": {
+      "type": "exact",
+      "normalize": { "macrons": true, "case": "insensitive" }
+    },
+    "metadata": { "topic": "o-class possession", "level": "C1" }
+  },
+  {
+    "id": "syntax_conditional_contrary_001",
+    "task": "syntax",
+    "prompt": "Translate to Māori using a contrary-to-fact conditional: 'If I had known, I would have helped.'",
+    "expected": [
+      "Me i mōhio au, kua āwhina au",
+      "Me i mōhio ahau, kua āwhina ahau"
+    ],
+    "eval": { "type": "llm-judge" },
+    "metadata": { "topic": "conditionals", "level": "C2" }
+  },
+  {
+    "id": "morphology_passive_piki_001",
+    "task": "morphology",
+    "prompt": "Give the passive form of the verb 'piki' (to climb). Answer with a single word.",
+    "expected": ["pikia"],
+    "eval": {
+      "type": "exact",
+      "normalize": { "macrons": true, "case": "insensitive" }
+    },
+    "metadata": { "topic": "passive", "level": "C1" }
+  },
+  {
+    "id": "syntax_purpose_kia_001",
+    "task": "syntax",
+    "prompt": "Translate to Māori using 'kia' to express purpose: 'Speak clearly so that the children understand.'",
+    "expected": [
+      "Kōrerotia marama kia mārama ai ngā tamariki",
+      "Kōrero marama kia mārama ai ngā tamariki"
+    ],
+    "eval": { "type": "llm-judge" },
+    "metadata": { "topic": "purpose clauses", "level": "C1" }
   }
 ]
