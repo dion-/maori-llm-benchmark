@@ -12,9 +12,7 @@ export const TestSchema = z.object({
 
 export const TestSuiteSchema = z.array(TestSchema).min(1);
 
-export async function validateTestSuiteFile(
-  filePath: string
-): Promise<{
+export async function validateTestSuiteFile(filePath: string): Promise<{
   ok: boolean;
   count: number;
   errors: { path: (string | number)[]; message: string }[];
