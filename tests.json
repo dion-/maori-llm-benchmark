@@ -6,7 +6,7 @@
     "expected": ["whānau"],
     "eval": {
       "type": "exact",
-      "normalize": { "macrons": true, "case": "insensitive", "trim": true }
+      "normalize": { "macrons": true, "case": "insensitive" }
     },
     "metadata": { "domain": "everyday", "level": "A1" }
   },
@@ -17,7 +17,7 @@
     "expected": ["Aotearoa"],
     "eval": {
       "type": "exact",
-      "normalize": { "macrons": true, "case": "sensitive", "trim": true }
+      "normalize": { "macrons": true, "case": "sensitive" }
     }
   },
   {
@@ -38,14 +38,7 @@
     "expected": ["awa"],
     "eval": {
       "type": "exact",
-      "normalize": {
-        "macrons": true,
-        "case": "insensitive",
-        "trim": true,
-        "punctuation": "strip",
-        "whitespace": "collapse",
-        "stripOuterQuotes": true
-      }
+      "normalize": { "macrons": true, "case": "insensitive" }
     },
     "metadata": { "domain": "nature", "level": "A1" }
   },
@@ -53,17 +46,15 @@
     "id": "numbers_basic_027",
     "task": "numbers",
     "prompt": "Write the number 27 in Māori words.",
-    "expected": ["rua tekau mā whitu", "rua tekau ma whitu"],
+    "expected": [
+      "rua tekau mā whitu",
+      "rua tekau ma whitu",
+      "e rua tekau mā whitu",
+      "e rua tekau ma whitu"
+    ],
     "eval": {
       "type": "exact",
-      "normalize": {
-        "macrons": true,
-        "case": "insensitive",
-        "trim": true,
-        "punctuation": "strip",
-        "whitespace": "collapse",
-        "stripOuterQuotes": true
-      }
+      "normalize": { "macrons": true, "case": "insensitive" }
     },
     "metadata": { "domain": "numbers", "level": "A1" }
   },
@@ -71,16 +62,15 @@
     "id": "numbers_intermediate_365",
     "task": "numbers",
     "prompt": "Write the number 365 in Māori words.",
-    "expected": ["toru rau ono tekau mā rima", "toru rau ono tekau ma rima"],
+    "expected": [
+      "toru rau ono tekau mā rima",
+      "toru rau ono tekau ma rima",
+      "e toru rau ono tekau mā rima",
+      "e toru rau ono tekau ma rima"
+    ],
     "eval": {
       "type": "exact",
-      "normalize": {
-        "macrons": true,
-        "case": "insensitive",
-        "trim": true,
-        "punctuation": "strip",
-        "whitespace": "collapse"
-      }
+      "normalize": { "macrons": true, "case": "insensitive" }
     },
     "metadata": { "domain": "numbers", "level": "A2" }
   },
@@ -91,13 +81,7 @@
     "expected": ["āku", "aku"],
     "eval": {
       "type": "exact",
-      "allowSubstring": false,
-      "normalize": {
-        "macrons": true,
-        "case": "insensitive",
-        "trim": true,
-        "punctuation": "strip"
-      }
+      "normalize": { "macrons": true, "case": "insensitive" }
     },
     "metadata": { "topic": "a/o possession", "level": "A2" }
   },
@@ -106,14 +90,7 @@
     "task": "grammar",
     "prompt": "What particle marks past tense before verbs in Māori? Answer with a single word.",
     "expected": ["i"],
-    "eval": {
-      "type": "exact",
-      "normalize": {
-        "case": "insensitive",
-        "trim": true,
-        "punctuation": "strip"
-      }
-    },
+    "eval": { "type": "exact", "normalize": { "case": "insensitive" } },
     "metadata": { "topic": "tense particles", "level": "A1" }
   },
   {
@@ -131,7 +108,7 @@
     "expected": ["kōrerotia", "korerotia"],
     "eval": {
       "type": "exact",
-      "normalize": { "macrons": true, "case": "insensitive", "trim": true }
+      "normalize": { "macrons": true, "case": "insensitive" }
     },
     "metadata": { "topic": "passive", "level": "B1" }
   },
@@ -153,12 +130,7 @@
     "expected": ["Te Ika-a-Māui", "Te Ika a Māui"],
     "eval": {
       "type": "exact",
-      "normalize": {
-        "macrons": true,
-        "case": "sensitive",
-        "trim": true,
-        "punctuation": "keep"
-      }
+      "normalize": { "macrons": true, "case": "sensitive" }
     },
     "metadata": { "domain": "place-names", "level": "A2" }
   },
@@ -167,14 +139,7 @@
     "task": "grammar",
     "prompt": "What word is used to negate a verbal sentence (present/past) in Māori? Answer with a single word.",
     "expected": ["kāore", "kaore"],
-    "eval": {
-      "type": "exact",
-      "normalize": {
-        "case": "insensitive",
-        "trim": true,
-        "punctuation": "strip"
-      }
-    },
+    "eval": { "type": "exact", "normalize": { "case": "insensitive" } },
     "metadata": { "topic": "negation", "level": "A2" }
   },
   {
@@ -182,16 +147,7 @@
     "task": "grammar",
     "prompt": "Translate to Māori: 'I am reading right now.' Provide either of the common patterns.",
     "expected": ["Kei te pānui", "E pānui ana", "Kei te panui", "E panui ana"],
-    "eval": {
-      "type": "exact",
-      "allowSubstring": true,
-      "normalize": {
-        "macrons": true,
-        "case": "insensitive",
-        "trim": true,
-        "whitespace": "collapse"
-      }
-    },
+    "eval": { "type": "llm-judge" },
     "metadata": { "topic": "aspect", "level": "A2" }
   },
   {
@@ -221,14 +177,7 @@
     "task": "grammar",
     "prompt": "Choose the correct preposition indicating motion towards: 'Haere ____ te toa.' Answer with a single word.",
     "expected": ["ki"],
-    "eval": {
-      "type": "exact",
-      "normalize": {
-        "case": "insensitive",
-        "trim": true,
-        "punctuation": "strip"
-      }
-    },
+    "eval": { "type": "exact", "normalize": { "case": "insensitive" } },
     "metadata": { "topic": "prepositions", "level": "A1" }
   },
   {
@@ -236,10 +185,7 @@
     "task": "vocabulary",
     "prompt": "Translate the English word 'computer' into te reo Māori. Answer with a single word.",
     "expected": ["rorohiko"],
-    "eval": {
-      "type": "exact",
-      "normalize": { "case": "insensitive", "trim": true }
-    },
+    "eval": { "type": "exact", "normalize": { "case": "insensitive" } },
     "metadata": { "domain": "technology", "level": "A2" }
   },
   {

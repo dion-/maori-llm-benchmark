@@ -24,21 +24,11 @@ function evaluateExact(test: TestCase, modelResponse: string): number {
       .object({
         macrons: z.boolean().optional(),
         case: z.enum(["insensitive", "sensitive"]).optional(),
-        trim: z.boolean().optional(),
-        stripOuterQuotes: z.boolean().optional(),
-        punctuation: z.enum(["strip", "keep"]).optional(),
-        whitespace: z.enum(["collapse", "keep"]).optional(),
       })
       .optional(),
-    // If true, allow candidate to contain extra explanatory words as long as any expected appears as a standalone token sequence
-    allowSubstring: z.boolean().optional(),
-    // If true, accept if candidate starts with any expected (useful for answers followed by punctuation)
-    allowPrefix: z.boolean().optional(),
   });
   const cfg = schema.safeParse(test.eval);
   const norm = cfg.success ? cfg.data.normalize ?? {} : {};
-  const allowSubstring = cfg.success ? Boolean(cfg.data.allowSubstring) : false;
-  const allowPrefix = cfg.success ? Boolean(cfg.data.allowPrefix) : false;
   const expected = Array.isArray(test.expected)
     ? (test.expected as unknown[]).map(String)
     : [String(test.expected ?? "")];
@@ -47,12 +37,6 @@ function evaluateExact(test: TestCase, modelResponse: string): number {
   for (const e of expected) {
     const ee = normalizeText(String(e), norm);
     if (ee === candidate) return 1;
-    if (allowPrefix && candidate.startsWith(ee)) return 1;
-    if (allowSubstring) {
-      // Match on word boundaries to avoid partial-word matches
-      const pattern = new RegExp(`(^|\\b)${escapeRegex(ee)}(\\b|$)`);
-      if (pattern.test(candidate)) return 1;
-    }
   }
   return 0;
 }

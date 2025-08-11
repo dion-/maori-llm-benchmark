@@ -49,6 +49,7 @@ export type TestResult = {
   raw?: unknown;
   score: number; // 0..1 per-test
   latencyMs: number;
+  expected?: unknown;
   error?: string;
 };
 
@@ -130,6 +131,7 @@ export async function runBenchmark(options: RunOptions): Promise<RunOutput> {
               raw,
               score,
               latencyMs,
+              expected: test.expected,
             };
             writeTrace(runDir, result);
             return result;
@@ -143,6 +145,7 @@ export async function runBenchmark(options: RunOptions): Promise<RunOutput> {
               response: "",
               score: 0,
               latencyMs,
+              expected: test.expected,
               error: err instanceof Error ? err.message : String(err),
             };
             writeTrace(runDir, result);
@@ -184,7 +187,9 @@ export async function runBenchmark(options: RunOptions): Promise<RunOutput> {
 }
 
 function writeTrace(runDir: string, r: TestResult): void {
-  const name = `${sanitize(r.model)}__${sanitize(r.testId)}.json`;
+  const isFail = Boolean(r.error) || r.score < 1;
+  const status = isFail ? "__FAIL" : "";
+  const name = `${sanitize(r.model)}__${sanitize(r.testId)}${status}.json`;
   const path = join(runDir, "traces", name);
   writeFileSync(
     path,
@@ -197,6 +202,7 @@ function writeTrace(runDir: string, r: TestResult): void {
         response: r.response,
         score: r.score,
         latencyMs: r.latencyMs,
+        expected: r.expected,
         error: r.error,
         raw: r.raw,
       },
