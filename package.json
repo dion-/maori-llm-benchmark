@@ -1,0 +1,15 @@
+{
+  "name": "maori-benchmark",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "openai": "^5.12.2"
+  }
+}
