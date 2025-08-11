@@ -86,6 +86,9 @@ bun run bench \
 - Auth: `OPENROUTER_API_KEY`; optional `HTTP-Referer`, `X-Title`
 - Reference: [OpenRouter Quickstart](https://openrouter.ai/docs/quickstart)
 - Use OpenAI JS library
+  - Env: `OPENROUTER_API_KEY` required; optional `OPENROUTER_HTTP_REFERER`, `OPENROUTER_X_TITLE`
+  - Base URL: `https://openrouter.ai/api/v1`
+  - We call `chat.completions.create`
 
 ## Concurrency, budgets, retries
 
