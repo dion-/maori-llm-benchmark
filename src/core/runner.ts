@@ -112,7 +112,9 @@ export async function runBenchmark(options: RunOptions): Promise<RunOutput> {
                     {
                       role: "system",
                       content:
-                        "You are a helpful assistant. Respond concisely.",
+                        test.eval?.type === "exact"
+                          ? "You are a helpful assistant. Respond ONLY with the answer, and nothing else. Do not add any preamble, context, or commentary."
+                          : "You are a helpful assistant. Respond concisely.",
                     },
                     { role: "user", content: test.prompt },
                   ],

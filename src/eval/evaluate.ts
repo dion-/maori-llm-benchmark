@@ -61,7 +61,7 @@ ${JSON.stringify(test.expected)}
 
 Return only the number.`;
   const { text } = await client.complete({
-    model: "openai/gpt-4o-mini",
+    model: "openai/o3",
     messages: [
       {
         role: "system",

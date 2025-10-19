@@ -1,5 +1,10 @@
 [
   {
+    "name": "gpt-3.5-turbo",
+    "provider_id": "openai/gpt-3.5-turbo",
+    "params": { "temperature": 0.2 }
+  },
+  {
     "name": "gpt-4o-mini",
     "provider_id": "openai/gpt-4o-mini",
     "params": { "temperature": 0.2 }
@@ -33,13 +38,8 @@
   },
 
   {
-    "name": "gemini-1.5-pro",
-    "provider_id": "google/gemini-1.5-pro",
-    "params": { "temperature": 0.2 }
-  },
-  {
-    "name": "gemini-1.5-flash",
-    "provider_id": "google/gemini-flash-1.5",
+    "name": "gemini-2.5-flash",
+    "provider_id": "google/gemini-2.5-flash",
     "params": { "temperature": 0.2 }
   },
 
@@ -103,11 +103,6 @@
     "provider_id": "x-ai/grok-4",
     "params": { "temperature": 0.2 }
   },
-  {
-    "name": "grok-4-mini",
-    "provider_id": "x-ai/grok-4-mini",
-    "params": { "temperature": 0.2 }
-  },
 
   {
     "name": "o4-mini",
@@ -159,22 +154,22 @@
   },
   {
     "name": "gpt-5",
-    "provider_id": "openai/gpt-4.1",
+    "provider_id": "openai/gpt-5",
     "params": { "temperature": 0.2 }
   },
   {
     "name": "gpt-5:high",
-    "provider_id": "openai/gpt-4.1",
+    "provider_id": "openai/gpt-5",
     "params": { "temperature": 0.2, "reasoning_effort": "high" }
   },
   {
     "name": "gpt-5:low",
-    "provider_id": "openai/gpt-4.1",
+    "provider_id": "openai/gpt-5",
     "params": { "temperature": 0.2, "reasoning_effort": "low" }
   },
   {
     "name": "gpt-5-mini",
-    "provider_id": "openai/gpt-4.1-mini",
+    "provider_id": "openai/gpt-5-mini",
     "params": { "temperature": 0.2 }
   },
   {
@@ -195,8 +190,8 @@
   },
 
   {
-    "name": "qwen-3-72b-instruct",
-    "provider_id": "qwen/qwen-3-72b-instruct",
+    "name": "qwen3-235b-a22b-thinking",
+    "provider_id": "qwen/qwen3-235b-a22b-thinking-2507",
     "params": { "temperature": 0.2 }
   },
   {

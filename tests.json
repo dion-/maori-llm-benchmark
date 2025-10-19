@@ -1,330 +1,200 @@
 [
   {
-    "id": "vocab_kupu_001",
-    "task": "vocabulary",
-    "prompt": "Translate the English word 'family' into te reo Māori. Answer with a single word.",
-    "expected": ["whānau", "whanau"],
-    "eval": {
-      "type": "exact",
-      "normalize": { "macrons": true, "case": "insensitive" }
-    },
-    "metadata": { "domain": "everyday", "level": "A1" }
-  },
-  {
-    "id": "orthography_macron_001",
-    "task": "orthography",
-    "prompt": "Write the Māori word for 'New Zealand' using correct macrons.",
-    "expected": ["Aotearoa"],
-    "eval": {
-      "type": "exact",
-      "normalize": { "macrons": true, "case": "sensitive" }
-    }
-  },
-  {
-    "id": "translation_en_mi_001",
-    "task": "translation",
-    "prompt": "Translate to Māori: 'Good morning, everyone.'",
-    "expected": [
-      "Mōrena koutou",
-      "Ata mārie e te whānau",
-      "Mōrena e te whānau"
-    ],
-    "eval": { "type": "llm-judge" }
-  },
-  {
-    "id": "vocab_kupu_002",
-    "task": "vocabulary",
-    "prompt": "Translate the English word 'river' into te reo Māori. Answer with a single word.",
-    "expected": ["awa"],
-    "eval": {
-      "type": "exact",
-      "normalize": { "macrons": true, "case": "insensitive" }
-    },
-    "metadata": { "domain": "nature", "level": "A1" }
-  },
-  {
-    "id": "numbers_basic_027",
-    "task": "numbers",
-    "prompt": "Write the number 27 in Māori words.",
-    "expected": [
-      "rua tekau mā whitu",
-      "rua tekau ma whitu",
-      "e rua tekau mā whitu",
-      "e rua tekau ma whitu"
-    ],
-    "eval": {
-      "type": "exact",
-      "normalize": { "macrons": true, "case": "insensitive" }
-    },
-    "metadata": { "domain": "numbers", "level": "A1" }
-  },
-  {
-    "id": "numbers_intermediate_365",
-    "task": "numbers",
-    "prompt": "Write the number 365 in Māori words.",
-    "expected": [
-      "toru rau ono tekau mā rima",
-      "toru rau ono tekau ma rima",
-      "e toru rau ono tekau mā rima",
-      "e toru rau ono tekau ma rima"
-    ],
-    "eval": {
-      "type": "exact",
-      "normalize": { "macrons": true, "case": "insensitive" }
-    },
-    "metadata": { "domain": "numbers", "level": "A2" }
-  },
-  {
-    "id": "grammar_ao_possession_aku_001",
-    "task": "grammar",
-    "prompt": "Fill the blank with the correct possessive (a-class or o-class): '____ tamariki' (my children). Answer with the possessive only.",
-    "expected": ["āku", "aku"],
-    "eval": {
-      "type": "exact",
-      "normalize": { "macrons": true, "case": "insensitive" }
-    },
-    "metadata": { "topic": "a/o possession", "level": "A2" }
-  },
-  {
-    "id": "grammar_particle_past_i_001",
-    "task": "grammar",
-    "prompt": "What particle marks past tense before verbs in Māori? Answer with a single word.",
-    "expected": ["i"],
-    "eval": { "type": "exact", "normalize": { "case": "insensitive" } },
-    "metadata": { "topic": "tense particles", "level": "A1" }
-  },
-  {
-    "id": "translation_mi_en_002",
-    "task": "translation",
-    "prompt": "Translate to English: 'He aha tō ingoa?'",
-    "expected": ["What is your name?", "What's your name?"],
-    "eval": { "type": "llm-judge" },
-    "metadata": { "domain": "greeting", "level": "A1" }
-  },
-  {
-    "id": "morphology_passive_korero_001",
+    "id": "morphology_passive_whai_001",
     "task": "morphology",
-    "prompt": "Give the passive form of the verb 'kōrero' (to speak). Answer with a single word.",
-    "expected": ["kōrerotia", "korerotia"],
+    "prompt": "Give the passive form of the verb 'whai' (to pursue). Answer with a single word.",
+    "expected": ["whāia", "whaia"],
     "eval": {
       "type": "exact",
-      "normalize": { "macrons": true, "case": "insensitive" }
+      "normalize": { "macrons": false, "case": "insensitive", "trim": true }
     },
-    "metadata": { "topic": "passive", "level": "B1" }
+    "metadata": { "topic": "passive", "level": "C2" }
   },
   {
-    "id": "idiom_explain_001",
-    "task": "idiom",
-    "prompt": "Explain the meaning of the saying: 'He aha te mea nui o te ao? He tāngata, he tāngata, he tāngata.'",
-    "expected": [
-      "People are the most important thing",
-      "The most important thing in the world is people"
-    ],
-    "eval": { "type": "llm-judge" },
-    "metadata": { "topic": "whakataukī", "level": "B1" }
-  },
-  {
-    "id": "orthography_north_island_001",
-    "task": "orthography",
-    "prompt": "Write the Māori name for the North Island with correct hyphens and macrons.",
-    "expected": ["Te Ika-a-Māui", "Te Ika a Māui"],
-    "eval": {
-      "type": "exact",
-      "normalize": { "macrons": true, "case": "sensitive" }
-    },
-    "metadata": { "domain": "place-names", "level": "A2" }
-  },
-  {
-    "id": "grammar_negation_kaore_001",
-    "task": "grammar",
-    "prompt": "What word is used to negate a verbal sentence (present/past) in Māori? Answer with a single word.",
-    "expected": ["kāore", "kaore"],
-    "eval": { "type": "exact", "normalize": { "case": "insensitive" } },
-    "metadata": { "topic": "negation", "level": "A2" }
-  },
-  {
-    "id": "aspect_present_continuous_001",
-    "task": "grammar",
-    "prompt": "Translate to Māori: 'I am reading right now.' Provide either of the common patterns.",
-    "expected": [
-      "Kei te pānui",
-      "E pānui ana",
-      "Kei te panui",
-      "E panui ana",
-      "Kei te pānui au",
-      "E pānui ana au",
-      "Kei te pānui ahau",
-      "E pānui ana ahau",
-      "Kei te panui au",
-      "E panui ana au",
-      "Kei te panui ahau",
-      "E panui ana ahau"
-    ],
-    "eval": { "type": "llm-judge" },
-    "metadata": { "topic": "aspect", "level": "A2" }
-  },
-  {
-    "id": "translation_en_mi_advanced_001",
-    "task": "translation",
-    "prompt": "Translate to Māori: 'We will meet at the library at 3pm tomorrow.'",
-    "expected": [
-      "Ka tūtaki tātou ki te whare pukapuka āpōpō i te toru karaka",
-      "Ka hui tātou ki te whare pukapuka āpōpō i te toru karaka"
-    ],
-    "eval": { "type": "llm-judge" },
-    "metadata": { "domain": "plans", "level": "B1" }
-  },
-  {
-    "id": "syntax_relative_clause_teacher_001",
-    "task": "syntax",
-    "prompt": "Translate to Māori: 'The man who is speaking is my teacher.'",
-    "expected": [
-      "Ko te tāne e kōrero ana ko tōku kaiako",
-      "Ko te tangata e kōrero ana ko tōku kaiako"
-    ],
-    "eval": { "type": "llm-judge" },
-    "metadata": { "topic": "relative-clause", "level": "B2" }
-  },
-  {
-    "id": "grammar_preposition_motion_001",
-    "task": "grammar",
-    "prompt": "Choose the correct preposition indicating motion towards: 'Haere ____ te toa.' Answer with a single word.",
-    "expected": ["ki"],
-    "eval": { "type": "exact", "normalize": { "case": "insensitive" } },
-    "metadata": { "topic": "prepositions", "level": "A1" }
-  },
-  {
-    "id": "vocab_kupu_tech_001",
-    "task": "vocabulary",
-    "prompt": "Translate the English word 'computer' into te reo Māori. Answer with a single word.",
-    "expected": ["rorohiko"],
-    "eval": { "type": "exact", "normalize": { "case": "insensitive" } },
-    "metadata": { "domain": "technology", "level": "A2" }
-  },
-  {
-    "id": "comprehension_short_001",
-    "task": "comprehension",
-    "prompt": "Pānuihia, ā, whakautua te pātai: 'I te ata ka haere a Mere ki te toa ki te hoko parāoa. I hoki ia ki te kāinga i muri i te toru karaka.' Pātai: Āhea a Mere i hoki ai ki te kāinga?",
-    "expected": ["I muri i te toru karaka", "After three o'clock"],
-    "eval": { "type": "llm-judge" },
-    "metadata": { "domain": "daily-life", "level": "B1" }
-  },
-  {
-    "id": "syntax_focus_emphasis_001",
-    "task": "syntax",
-    "prompt": "Translate to Māori with focus on the agent: 'It was Hine who sang.'",
-    "expected": ["Nā Hine i waiata", "Nā Hine i te waiata"],
-    "eval": { "type": "llm-judge" },
-    "metadata": { "topic": "focus/emphasis", "level": "B2" }
-  },
-  {
-    "id": "syntax_cleft_location_001",
-    "task": "syntax",
-    "prompt": "Translate to Māori using a cleft sentence emphasising the location: 'It was on the hill that they built the pā.'",
-    "expected": [
-      "Ko runga i te puke i hanga ai rātou i te pā",
-      "Ko runga i te puke i hangaia ai rātou i te pā"
-    ],
-    "eval": { "type": "llm-judge" },
-    "metadata": { "topic": "cleft-sentences", "level": "C1" }
-  },
-  {
-    "id": "morphology_causative_haere_001",
+    "id": "morphology_causative_tu_001",
     "task": "morphology",
-    "prompt": "Form the causative version of the verb 'haere' (to go). Answer with a single word.",
-    "expected": ["whakahaere"],
+    "prompt": "Form the causative version of the verb 'tū' (to stand). Answer with a single word.",
+    "expected": ["whakatū", "whakatu"],
     "eval": {
       "type": "exact",
-      "normalize": { "macrons": true, "case": "insensitive" }
+      "normalize": { "macrons": false, "case": "insensitive" }
     },
-    "metadata": { "topic": "causative", "level": "C1" }
+    "metadata": { "topic": "causative", "level": "C2" }
   },
   {
-    "id": "translation_oratory_steadfast_001",
-    "task": "translation",
-    "prompt": "Translate to Māori: 'Should the winds of adversity blow, let our hearts remain steadfast.'",
-    "expected": [
-      "Mehemea ka pūhia ngā hau o te raruraru, kia ū tō tātou ngākau",
-      "Mēnā e pupū ana ngā hau kino, kia ū tonu ō tātou ngākau"
-    ],
-    "eval": { "type": "llm-judge" },
-    "metadata": { "domain": "oratory", "level": "C2" }
-  },
-  {
-    "id": "comprehension_reason_agreement_001",
-    "task": "comprehension",
-    "prompt": "Pānuihia tēnei: 'Ka mutu ana te hui, ka tū a Mere ki te kōrero. Ahakoa ngā take uaua, i ū ia ki te kaupapa. Nā whai anō i whakaae te katoa.' Pātai: He aha te take i whakaae ai te katoa?",
-    "expected": [
-      "Nā te mea i ū a Mere ki te kaupapa",
-      "Because Mere stuck to the topic"
-    ],
-    "eval": { "type": "llm-judge" },
-    "metadata": { "domain": "discourse", "level": "C1" }
-  },
-  {
-    "id": "idiom_flounder_001",
-    "task": "idiom",
-    "prompt": "Interpret the meaning of the proverb: 'E kore te pātiki e hoki ki tōna puehu.'",
-    "expected": [
-      "Once you leave, you will not return to where you started",
-      "A person rarely returns after leaving their home or origin"
-    ],
-    "eval": { "type": "llm-judge" },
-    "metadata": { "topic": "whakataukī", "level": "C2" }
-  },
-  {
-    "id": "syntax_topicalization_fronting_001",
-    "task": "syntax",
-    "prompt": "Translate to Māori using topicalization to front the object: 'The book, the child read it yesterday.'",
-    "expected": [
-      "Ko te pukapuka i pānui te tamaiti inanahi",
-      "Ko te pukapuka i pānuihia e te tamaiti inanahi"
-    ],
-    "eval": { "type": "llm-judge" },
-    "metadata": { "topic": "topicalization", "level": "C2" }
-  },
-  {
-    "id": "grammar_ao_possession_reflexive_001",
+    "id": "grammar_particle_relative_ai_001",
     "task": "grammar",
-    "prompt": "Translate to Māori emphasising ownership: 'His own thoughts.' Answer with the phrase only.",
-    "expected": ["ōna ake whakaaro", "ona ake whakaaro"],
+    "prompt": "What particle is used after a verb to link a relative clause in Māori? Answer with a single word.",
+    "expected": ["ai"],
     "eval": {
       "type": "exact",
-      "normalize": { "macrons": true, "case": "insensitive" }
+      "normalize": { "case": "insensitive" }
     },
-    "metadata": { "topic": "o-class possession", "level": "C1" }
+    "metadata": { "topic": "relative-clause", "level": "C2" }
   },
   {
-    "id": "syntax_conditional_contrary_001",
-    "task": "syntax",
-    "prompt": "Translate to Māori using a contrary-to-fact conditional: 'If I had known, I would have helped.'",
-    "expected": [
-      "Me i mōhio au, kua āwhina au",
-      "Me i mōhio ahau, kua āwhina ahau"
-    ],
-    "eval": { "type": "llm-judge" },
-    "metadata": { "topic": "conditionals", "level": "C2" }
+    "id": "grammar_particle_counter_toko_001",
+    "task": "grammar",
+    "prompt": "What particle is placed before numbers 2-9 when counting people in Māori? Answer with a single word.",
+    "expected": ["toko"],
+    "eval": {
+      "type": "exact",
+      "normalize": { "case": "insensitive", "trim": true }
+    },
+    "metadata": { "topic": "numerals", "level": "C2" }
   },
   {
-    "id": "morphology_passive_piki_001",
+    "id": "pronoun_dual_inclusive_first_001",
+    "task": "grammar",
+    "prompt": "Write the first-person dual inclusive personal pronoun in Māori (we two, including you). Answer with a single word.",
+    "expected": ["tāua", "taua"],
+    "eval": {
+      "type": "exact",
+      "normalize": { "macrons": false, "case": "insensitive", "trim": true }
+    },
+    "metadata": { "topic": "pronouns", "level": "C2" }
+  },
+  {
+    "id": "grammar_negation_equational_001",
+    "task": "grammar",
+    "prompt": "What word is used to negate an equational or identifying sentence in Māori? Answer with a single word.",
+    "expected": ["ehara"],
+    "eval": {
+      "type": "exact",
+      "normalize": { "case": "insensitive", "trim": true }
+    },
+    "metadata": { "topic": "negation", "level": "C2" }
+  },
+  {
+    "id": "pronoun_dual_exclusive_first_001",
+    "task": "grammar",
+    "prompt": "Write the first-person dual exclusive personal pronoun in Māori (we two, excluding you). Answer with a single word.",
+    "expected": ["māua", "maua"],
+    "eval": {
+      "type": "exact",
+      "normalize": { "macrons": false, "case": "insensitive", "trim": true }
+    },
+    "metadata": { "topic": "pronouns", "level": "C2" }
+  },
+  {
+    "id": "pronoun_plural_inclusive_first_001",
+    "task": "grammar",
+    "prompt": "Write the first-person plural inclusive personal pronoun in Māori (we all, including you). Answer with a single word.",
+    "expected": ["tātou", "tatou"],
+    "eval": {
+      "type": "exact",
+      "normalize": { "macrons": false, "case": "insensitive", "trim": true }
+    },
+    "metadata": { "topic": "pronouns", "level": "C2" }
+  },
+  {
+    "id": "pronoun_plural_exclusive_first_001",
+    "task": "grammar",
+    "prompt": "Write the first-person plural exclusive personal pronoun in Māori (we all, excluding you). Answer with a single word.",
+    "expected": ["mātou", "matou"],
+    "eval": {
+      "type": "exact",
+      "normalize": { "macrons": false, "case": "insensitive", "trim": true }
+    },
+    "metadata": { "topic": "pronouns", "level": "C2" }
+  },
+  {
+    "id": "grammar_particle_negative_imperative_001",
+    "task": "grammar",
+    "prompt": "What word is commonly used to negate an imperative (command) in Māori? Answer with a single word.",
+    "expected": ["kaua", "aua"],
+    "eval": {
+      "type": "exact",
+      "normalize": { "macrons": false, "case": "insensitive", "trim": true }
+    },
+    "metadata": { "topic": "negation", "level": "C2" }
+  },
+  {
+    "id": "grammar_particle_modal_kia_001",
+    "task": "grammar",
+    "prompt": "What particle precedes verbs to express purpose or desired result in Māori? Answer with a single word.",
+    "expected": ["kia"],
+    "eval": {
+      "type": "exact",
+      "normalize": { "case": "insensitive", "trim": true }
+    },
+    "metadata": { "topic": "purpose", "level": "C2" }
+  },
+  {
+    "id": "morphology_passive_patu_001",
     "task": "morphology",
-    "prompt": "Give the passive form of the verb 'piki' (to climb). Answer with a single word.",
-    "expected": ["pikia"],
+    "prompt": "Give the passive form of the verb 'patu' (to strike). Answer with a single word.",
+    "expected": ["patua", "pātua"],
     "eval": {
       "type": "exact",
-      "normalize": { "macrons": true, "case": "insensitive" }
+      "normalize": { "macrons": false, "case": "insensitive", "trim": true }
     },
-    "metadata": { "topic": "passive", "level": "C1" }
+    "metadata": { "topic": "passive", "level": "C2" }
   },
   {
-    "id": "syntax_purpose_kia_001",
-    "task": "syntax",
-    "prompt": "Translate to Māori using 'kia' to express purpose: 'Speak clearly so that the children understand.'",
-    "expected": [
-      "Kōrerotia marama kia mārama ai ngā tamariki",
-      "Kōrero marama kia mārama ai ngā tamariki"
-    ],
-    "eval": { "type": "llm-judge" },
-    "metadata": { "topic": "purpose clauses", "level": "C1" }
+    "id": "morphology_passive_tunu_001",
+    "task": "morphology",
+    "prompt": "Give the passive form of the verb 'tunu' (to cook). Answer with a single word.",
+    "expected": ["tunua", "tūnua"],
+    "eval": {
+      "type": "exact",
+      "normalize": { "macrons": false, "case": "insensitive", "trim": true }
+    },
+    "metadata": { "topic": "passive", "level": "C2" }
+  },
+  {
+    "id": "morphology_causative_noho_001",
+    "task": "morphology",
+    "prompt": "Form the causative version of the verb 'noho' (to sit/reside). Answer with a single word.",
+    "expected": ["whakanoho"],
+    "eval": {
+      "type": "exact",
+      "normalize": { "case": "insensitive", "trim": true }
+    },
+    "metadata": { "topic": "causative", "level": "C2" }
+  },
+  {
+    "id": "grammar_particle_perfective_kua_001",
+    "task": "grammar",
+    "prompt": "What particle marks the perfective aspect (completed action) before verbs in Māori? Answer with a single word.",
+    "expected": ["kua"],
+    "eval": {
+      "type": "exact",
+      "normalize": { "case": "insensitive", "trim": true }
+    },
+    "metadata": { "topic": "aspect", "level": "C2" }
+  },
+  {
+    "id": "pronoun_dual_second_person_001",
+    "task": "grammar",
+    "prompt": "Write the second-person dual personal pronoun in Māori (you two). Answer with a single word.",
+    "expected": ["kōrua", "korua"],
+    "eval": {
+      "type": "exact",
+      "normalize": { "macrons": false, "case": "insensitive", "trim": true }
+    },
+    "metadata": { "topic": "pronouns", "level": "C2" }
+  },
+  {
+    "id": "pronoun_plural_third_person_001",
+    "task": "grammar",
+    "prompt": "Write the third-person plural personal pronoun in Māori (they, 3+). Answer with a single word.",
+    "expected": ["rātou", "ratou"],
+    "eval": {
+      "type": "exact",
+      "normalize": { "macrons": false, "case": "insensitive", "trim": true }
+    },
+    "metadata": { "topic": "pronouns", "level": "C2" }
+  },
+  {
+    "id": "grammar_particle_future_ka_001",
+    "task": "grammar",
+    "prompt": "What particle commonly precedes verbs to mark a future or inceptive action in Māori? Answer with a single word.",
+    "expected": ["ka"],
+    "eval": {
+      "type": "exact",
+      "normalize": { "case": "insensitive", "trim": true }
+    },
+    "metadata": { "topic": "aspect", "level": "C2" }
   }
 ]

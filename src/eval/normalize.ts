@@ -18,7 +18,8 @@ export function normalizeText(
     out = out.toLocaleLowerCase();
   if (opts?.macrons ?? true) out = normalizeMacrons(out);
   if (opts?.stripOuterQuotes) out = stripOuterQuotes(out);
-  if ((opts?.punctuation ?? "keep") === "strip") out = stripPunctuation(out);
+  // Default to stripping punctuation (common harmless differences like trailing full stops)
+  if ((opts?.punctuation ?? "strip") === "strip") out = stripPunctuation(out);
   if ((opts?.whitespace ?? "keep") === "collapse")
     out = collapseWhitespace(out);
   return out;

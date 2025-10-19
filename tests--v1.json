@@ -1,0 +1,80 @@
+[
+  {
+    "id": "grammar_passive_perfective_001",
+    "task": "grammar",
+    "prompt": "Translate to Māori using the perfective passive: 'The food has been eaten.' Answer with the phrase only.",
+    "expected": ["Kua kainga te kai.", "Kua kaingia te kai."],
+    "eval": {
+      "type": "exact",
+      "normalize": { "macrons": false, "case": "insensitive", "trim": true }
+    },
+    "metadata": { "topic": "passive voice", "level": "C2" }
+  },
+  {
+    "id": "grammar_possession_dual_inclusive_001",
+    "task": "grammar",
+    "prompt": "Translate to Māori: 'our (2 inclusive) car.' Answer with the phrase only.",
+    "expected": [
+      "tō tāua motokā",
+      "to taua motoka",
+      "tō tāua waka",
+      "to taua waka",
+      "tā tāua motokā",
+      "ta taua motoka",
+      "tā tāua waka",
+      "ta taua waka"
+    ],
+    "eval": {
+      "type": "exact",
+      "normalize": { "macrons": false, "case": "insensitive", "trim": true }
+    },
+    "metadata": { "topic": "a-class possession", "level": "C2" }
+  },
+  {
+    "id": "grammar_conditional_ki_te_kore_001",
+    "task": "grammar",
+    "prompt": "Translate to Māori: 'If we don't hurry, we will miss the bus.' Use the 'ki te kore ... e' conditional. Answer with the sentence only.",
+    "expected": [
+      "Ki te kore tātou e tere, ka mahue te pahi.",
+      "Ki te kore tātou e hohoro, ka mahue te pahi.",
+      "Ki te kore tātou e hohoro, ka mahue tātou i te pahi.",
+      "Ki te kore tātou e tere, ka mahue tātou i te pahi.",
+      "Ki te kore tātou e whakatere, ka mahue te pahi.",
+      "Ki te kore tātou e whakatere, ka mahue tātou i te pahi.",
+      "Ki te kore tātou e whakatere, ka mahue te pahi i a tātou."
+    ],
+    "eval": {
+      "type": "llm-judge"
+    },
+    "metadata": { "topic": "conditionals", "level": "C2" }
+  },
+  {
+    "id": "grammar_reflexive_ake_001",
+    "task": "grammar",
+    "prompt": "Translate to Māori emphasising reflexivity: 'She taught herself.' Answer with the phrase only.",
+    "expected": [
+      "I ako ia i a ia anō.",
+      "I ako ia i a ia ano.",
+      "I whakaako ia i a ia anō.",
+      "I whakaako ia i a ia ano.",
+      "Nāna i ako i a ia anō.",
+      "Naana i ako i a ia ano."
+    ],
+    "eval": {
+      "type": "exact",
+      "normalize": { "macrons": false, "case": "insensitive", "trim": true }
+    },
+    "metadata": { "topic": "reflexive", "level": "C2" }
+  },
+  {
+    "id": "grammar_negative_habitual_001",
+    "task": "grammar",
+    "prompt": "Express in Māori: 'They (3+) will never forget.' Use the negative habitual construction 'e kore ... e'. Answer with the sentence only.",
+    "expected": ["E kore rātou e wareware.", "E kore ratou e wareware."],
+    "eval": {
+      "type": "exact",
+      "normalize": { "macrons": false, "case": "insensitive", "trim": true }
+    },
+    "metadata": { "topic": "negative habitual", "level": "C2" }
+  }
+]
